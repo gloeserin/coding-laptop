@@ -24,5 +24,8 @@ class LaboranController extends Controller
         return redirect(route('indexPeminjaman'));
     }
 
+
    
 }
+
+

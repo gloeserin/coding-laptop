@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->string('keterangan')->nullable();
             $table->string('validator')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

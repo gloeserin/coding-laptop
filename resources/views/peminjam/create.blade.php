@@ -127,6 +127,17 @@
                         <option value="5">5</option>
                     </select>
                 </div>
+
+                <div class="form-group" nctype="multipart/form-data">
+                <div class="row align-items-start">
+                    <div class="col-sm-12">
+                        <label for="image " class="form-label">Post Image</label>
+                        <input type="file" class="form-control" id="image" name="image" >
+                    </div>
+                </div>
+                </div>
+                <br>
+
                 <div class="form-group">
                     <label for="">Rayon</label>
                     <select name="rayon"  class="form-control"  required>

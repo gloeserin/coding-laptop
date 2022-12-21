@@ -29,6 +29,10 @@ class PeminjamController extends Controller
     }
 
     public function storePeminjaman(Request $request){
+
+        $file = $request->file('image')->store('images');
+        return back();
+
         $request->validate([
             'nisn' => 'required|min:8|max:8|unique:peminjaman,nisn',
             'nama' => 'required',
@@ -38,6 +42,10 @@ class PeminjamController extends Controller
             'ruangan' => 'required'
 
         ]);
+
+        // if ($request -> hasfile('image')) {
+        //     $image = date(YmdHis)
+        // }
 
         Peminjaman::create([
             'nisn' => $request->nisn,

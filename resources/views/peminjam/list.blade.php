@@ -41,10 +41,10 @@
                             <th>Rayon</th>
                             <th>No Laptop</th>
                             <th>Ruangan</th>
-                
+                            @auth
                             <th>Action</th>
                             <th>Validator</th>
-                       
+                            @endauth
                         </tr>
                     </thead>
                     <?php $i = 1;?>
@@ -58,7 +58,7 @@
                             <td>{{$dt->rayon}}</td>
                             <td>{{$dt->no_laptop}}</td>
                             <td>{{$dt->ruangan}}</td>
-                           
+                           @auth
                             <td>
                                 <?php if($dt->status == 0 ){ ?>
                                 <div class="row">
@@ -75,7 +75,7 @@
                             @else 
                                 <td>-</td>
                             @endif
-                           
+                            @endauth
                         </tr>
                     </tbody>
                     @endforeach

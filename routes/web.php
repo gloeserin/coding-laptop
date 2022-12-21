@@ -3,6 +3,9 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PeminjamController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LaboranController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +31,9 @@ Route::post('/store-peminjaman',[PeminjamController::class, 'storePeminjaman'])-
 
 
 //laboran
-Route::post('/approve-peminjaman',[PeminjamController::class, 'approve'])->name('approve');
+Route::post('/approve-peminjaman',[LaboranController::class, 'approvePeminjaman'])->name('approve');
 
-
+Route::middleware('isAdmin')->group(function(){
 //admin indexDataLaboran storeDataLaboran deleteLaboranData createDataLaptop
 Route::get('/index',[AdminController::class, 'indexPeminjaman'])->name('peminjaman');
 Route::get('/indexDataLaptop',[AdminController::class, 'indexDataLaptop'])->name('dataLaptop');
@@ -45,3 +48,7 @@ Route::get('/delete-laboran/{id}',[AdminController::class, 'deleteLaboranData'])
 Route::get('/create-data-laptop',[AdminController::class, 'createDataLaptop'])->name('createDataLaptop');
 Route::post('/store-data-laptop',[AdminController::class, 'storeDataLaptop'])->name('storeDataLaptop');
 Route::get('/delete-laptop/{id}',[AdminController::class, 'deleteLaptopData'])->name('deleteLaptopData');
+});
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/store', [LoginController::class, 'store']);
+Route::get('/logout', [LoginController::class, 'logout']);

@@ -18,6 +18,7 @@ class Peminjaman extends Model
         'ruangan',
         'status',
         'keterangan',
+        'file',
         'validator'
     ];
 }

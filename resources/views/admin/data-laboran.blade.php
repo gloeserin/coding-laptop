@@ -27,7 +27,7 @@
             <tbody>
                 <?php $i = 1;?>
                 @foreach($data as $dt)
-
+                @if ($dt->is_admin == 0)
                 <tr>
                     <td>{{$i++}}</td>
                     <td>{{$dt->name}}</td>
@@ -38,7 +38,9 @@
                     </td>
                     
                 </tr>
+                @endif
                 @endforeach
+
             </tbody>
         </table>
     </div>
